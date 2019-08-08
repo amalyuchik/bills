@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+        'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace="com.andrei.billtracker.dao.BillDao">
+
+<select id="selectEveryBill" resultType="com.andrei.billtracker.model.Bill" >
+SELECT
+b.bill_id as billId,
+       b.bill_name as billName,
+       b.bill_account_number as billAccountNumber,
+       b.bill_due_amount as billAmountDue,
+       b.bill_due_date as billDueDate,
+        b.bill_amount_past_due as billAmountPastDue,
+       bt.bill_type_name as billType,
+       b.bill_balance as billBalance
+FROM bills b
+JOIN bill_type bt ON b.bill_type_id = bt.bill_type_id
+</select>
+
+</mapper>

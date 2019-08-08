@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context crossContext="true" debug="0" docBase="/" path="/waterSystem" reloadable="true">
+  <Resource auth="Container" 
+			driverClassName="oracle.jdbc.driver.OracleDriver" 
+			logAbandoned="true" 
+			maxActive="1000" 
+			maxIdle="30" 
+			maxWait="1000" 
+			name="jdbc/watersystem" 
+			password="d3qW@t3rL!nk2o!8" 
+			removeAbandoned="true" 
+			removeAbandonedTimeout="10" 
+			type="javax.sql.DataSource" 
+			url="jdbc:oracle:thin:@//slxp5.dts.utah.gov:53235/env" 
+			username="UTAHDDW"
+			validationQuery="select 1 from dual"/>
+			
+  <Resource auth="Container" 
+			driverClassName="oracle.jdbc.driver.OracleDriver" 
+			logAbandoned="true" 
+			maxActive="1000" 
+			maxIdle="30" 
+			maxWait="1000" 
+			name="jdbc/dtsDynReport" 
+			password="d3qW@t3rL!nk2o!8"
+			removeAbandoned="true" 
+			removeAbandonedTimeout="10" 
+			type="javax.sql.DataSource" 
+			url="jdbc:oracle:thin:@//slxp5.dts.utah.gov:53235/env" 
+			username="UTAHDDW"
+			validationQuery="select 1 from dual"/>
+			
+</Context>
