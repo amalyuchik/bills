@@ -13,11 +13,11 @@ import java.util.List;
 @Service("billService")
 public class BillServiceImpl implements BillService {
 
-//    @Autowired
-//    private BillDao dao;
+    @Autowired
+    private BillDao dao;
 
     @Override
-    public List<Bill> getBills() {
+    public List<Bill> selectEveryBill() {
         List<Bill> bill = new ArrayList<>();
         Bill myBill = new Bill();
         myBill.setBillId(1);
@@ -26,7 +26,7 @@ public class BillServiceImpl implements BillService {
         myBill.setBillAmountDue(20.78);
         myBill.setBillAmountPastDue(8.88);
         myBill.setBillType("Power");
-//        List<Bill> billSelect = dao.selectEveryBill();
+        List<Bill> billSelect = dao.selectEveryBill();
         return bill;
     }
 }

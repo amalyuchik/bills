@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @MapperScan("com.andrei.bills.dao")
-@SpringBootApplication
+@SpringBootApplication()
 public class BillsApplication {
 
 	public static void main(String[] args) {

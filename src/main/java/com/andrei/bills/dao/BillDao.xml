@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
         'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
 
-<mapper namespace="com.andrei.billtracker.dao.BillDao">
+<mapper namespace="com.andrei.bills.dao.BillDao">
 
-<select id="selectEveryBill" resultType="com.andrei.billtracker.model.Bill" >
+<select id="selectEveryBill" resultType="com.andrei.bills.model.Bill" >
 SELECT
 b.bill_id as billId,
        b.bill_name as billName,

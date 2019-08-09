@@ -21,7 +21,7 @@ public class BillsController {
    private String welcomeMessage;
     @GetMapping(value = "/")
     public List<Bill> index(){
-        List<Bill> str = billService.getBills();
+        List<Bill> str = billService.selectEveryBill();
         System.out.println("testing sout");
         System.out.println("${jdbc.driverClassName}");
         return str;

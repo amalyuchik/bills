@@ -42,7 +42,7 @@
         <constructor-arg index="0" ref="sqlSessionFactory" />
     </bean>
 
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.andrei.bills.dao" />
-    </bean>
+<!--    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+<!--        <property name="basePackage" value="com.andrei.bills.dao" />-->
+<!--    </bean>-->
 </beans>
