@@ -2,10 +2,11 @@ package com.andrei.bills.model;
 
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Component
-public class Bill {
+public class Bill implements Serializable {
     private int billId;
     private String billName;
     private String billAccountNumber;
@@ -77,5 +78,13 @@ public class Bill {
 
     public void setBillBalance(Number billBalance) {
         this.billBalance = billBalance;
+    }
+
+    @Override
+    public String toString(){
+        return "Bill{" +
+                "Name = " + billName +
+                ", Amount = " + billAmountDue +
+                ", Due Date = " + billDueDate + "}";
     }
 }

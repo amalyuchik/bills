@@ -1,0 +1,49 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xmlns:context="http://www.springframework.org/schema/context"-->
+<!--       xmlns:mvc="http://www.springframework.org/schema/mvc"-->
+<!--       xmlns:tx="http://www.springframework.org/schema/tx"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd-->
+<!--      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd-->
+<!--      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd-->
+<!--      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">-->
+
+<!--    <mvc:annotation-driven />-->
+
+<!--    <context:component-scan base-package="com.andrei" />-->
+
+<!--    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+<!--        <property name="prefix" value="/WEB-INF/jsp/" />-->
+<!--        <property name="suffix" value=".jsp" />-->
+<!--    </bean>-->
+
+
+
+<!--    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+<!--        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/test_database" />-->
+<!--&lt;!&ndash;        <property name="url" value="jdbc:mysql://looselabworknew.db.3766381.ddc.hostedresource.net:3306/looselabworknew" />&ndash;&gt;-->
+<!--        <property name="username" value="Andrei" />-->
+<!--        <property name="password" value="" />-->
+<!--    </bean>-->
+
+<!--    <tx:annotation-driven transaction-manager="transactionManager" />-->
+<!--    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+<!--        <property name="dataSource" ref="dataSource" />-->
+<!--    </bean>-->
+
+<!--&lt;!&ndash;    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="dataSource" ref="dataSource" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="typeAliasesPackage" value="com.andrei.bills"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="mapperLocations" value="src/main/resources/com/andrei/bills/dao/*.xml" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </bean>&ndash;&gt;-->
+
+<!--    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">-->
+<!--        <constructor-arg index="0" ref="sqlSessionFactory" />-->
+<!--    </bean>-->
+
+<!--    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+<!--        <property name="basePackage" value="com.andrei.bills.dao" />-->
+<!--    </bean>-->
+<!--</beans>-->

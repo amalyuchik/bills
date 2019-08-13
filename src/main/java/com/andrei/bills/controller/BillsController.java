@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -21,15 +23,24 @@ public class BillsController {
    private String welcomeMessage;
     @GetMapping(value = "/")
     public List<Bill> index(){
-        List<Bill> str = billService.selectEveryBill();
         System.out.println("testing sout");
-        System.out.println("${jdbc.driverClassName}");
+        List<Bill> str = billService.selectEveryBill();
+        for (Bill bill :
+                str) {
+            bill.setBillAccountNumber(bill.getBillAccountNumber() + " - Stuff-n-Stuff-some-more-stuff");
+        }
+                //
         return str;
            }
 
     @GetMapping(value = "/welcome")
     public String getWelcomeMessage(){
         //List<Bill>  rrr = billService.getBills();
-        return welcomeMessage+ " " + "${jdbc.driverClassName}";
+        return welcomeMessage;
+   }
+
+   @GetMapping(value = "/string")
+    public String selectString(){
+        return billService.selectString();
    }
 }

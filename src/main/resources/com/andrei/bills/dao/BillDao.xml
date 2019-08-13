@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
         'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
 
-<mapper namespace="com.andrei.bills.dao.BillDao">
+<mapper namespace="com.andrei.bills.dao.BillDao" >
 
 <select id="selectEveryBill" resultType="com.andrei.bills.model.Bill" >
 SELECT
@@ -17,5 +17,11 @@ b.bill_id as billId,
 FROM bills b
 JOIN bill_type bt ON b.bill_type_id = bt.bill_type_id
 </select>
+
+       <select id="selectString" resultType="String">
+              SELECT
+              'Strung' as billName
+                FROM bills
+       </select>
 
 </mapper>

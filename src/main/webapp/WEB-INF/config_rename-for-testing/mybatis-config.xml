@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="/src/main/resources/application.properties"/>
+    <typeAliases>
+        <typeAlias alias="bill" type="com.andrei.bills.model.Bill" />
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+<!--            <dataSource type="POOLED">-->
+<!--                <property name="driver" value="${jdbc.driverClassName}"/>-->
+<!--                <property name="url" value="${jdbc.url}"/>-->
+<!--                <property name="username" value="${jdbc.username}"/>-->
+<!--                <property name="password" value="${jdbc.password}"/>-->
+<!--            </dataSource>-->
+        <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/test_database"/>
+<!--                <property name="url" value="jdbc:mysql://looselabworknew.db.3766381.ddc.hostedresource.net:3306/looselabworknew"/>-->
+                <property name="username" value="Andrei"/>
+                <property name="password" value=""/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+<!--        Run on different system with different configuration -->
+<!--        <mapper resource="src/main/resources/com/andrei/bills/dao/BillDao.xml"/>-->
+<!--        <mapper class="com.andrei.bills.dao.BillDao" />-->
+<!--        <package name="com.andrei.bills.dao" />-->
+    </mappers>
+</configuration>
