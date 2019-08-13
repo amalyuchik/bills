@@ -18,7 +18,6 @@ public class BillsController {
 
     @Autowired
     private BillService billService;
-
    @Value("${welcome.message}")
    private String welcomeMessage;
     @GetMapping(value = "/")
@@ -35,12 +34,12 @@ public class BillsController {
 
     @GetMapping(value = "/welcome")
     public String getWelcomeMessage(){
-        //List<Bill>  rrr = billService.getBills();
         return welcomeMessage;
    }
 
    @GetMapping(value = "/string")
-    public String selectString(){
+    public String selectString()
+   {
         return billService.selectString();
    }
 }

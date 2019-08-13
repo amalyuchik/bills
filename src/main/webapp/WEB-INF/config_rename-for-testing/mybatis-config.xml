@@ -27,7 +27,7 @@
     </environments>
     <mappers>
 <!--        Run on different system with different configuration -->
-<!--        <mapper resource="src/main/resources/com/andrei/bills/dao/BillDao.xml"/>-->
+<!--        <mapper resource="src/main/java/com/andrei/bills/dao/BillDao.xml"/>-->
 <!--        <mapper class="com.andrei.bills.dao.BillDao" />-->
 <!--        <package name="com.andrei.bills.dao" />-->
     </mappers>
