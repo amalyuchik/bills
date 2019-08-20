@@ -11,10 +11,11 @@ public class Bill implements Serializable {
     private String billName;
     private String billAccountNumber;
     private Date billDueDate;
-    private Number billAmountDue;
-    private Number billAmountPastDue;
+    private Float billAmountDue;
+    private Float billAmountPastDue;
     private String billType;
-    private Number billBalance;
+    private Float billBalance;
+
 
     public int getBillId() {
         return billId;
@@ -48,22 +49,6 @@ public class Bill implements Serializable {
         this.billDueDate = billDueDate;
     }
 
-    public Number getBillAmountDue() {
-        return billAmountDue;
-    }
-
-    public void setBillAmountDue(Number billAmountDue) {
-        this.billAmountDue = billAmountDue;
-    }
-
-    public Number getBillAmountPastDue() {
-        return billAmountPastDue;
-    }
-
-    public void setBillAmountPastDue(Number billAmountPastDue) {
-        this.billAmountPastDue = billAmountPastDue;
-    }
-
     public String getBillType() {
         return billType;
     }
@@ -72,11 +57,27 @@ public class Bill implements Serializable {
         this.billType = billType;
     }
 
-    public Number getBillBalance() {
+    public Float getBillAmountDue() {
+        return billAmountDue;
+    }
+
+    public void setBillAmountDue(Float billAmountDue) {
+        this.billAmountDue = billAmountDue;
+    }
+
+    public Float getBillAmountPastDue() {
+        return billAmountPastDue;
+    }
+
+    public void setBillAmountPastDue(Float billAmountPastDue) {
+        this.billAmountPastDue = billAmountPastDue;
+    }
+
+    public Float getBillBalance() {
         return billBalance;
     }
 
-    public void setBillBalance(Number billBalance) {
+    public void setBillBalance(Float billBalance) {
         this.billBalance = billBalance;
     }
 
