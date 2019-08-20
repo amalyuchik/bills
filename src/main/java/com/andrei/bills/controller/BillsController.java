@@ -1,6 +1,5 @@
 package com.andrei.bills.controller;
 
-import com.andrei.bills.model.Bill;
 import com.andrei.bills.service.BillService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,10 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 
 @RestController
 @RequestMapping("/bills")
@@ -24,16 +27,19 @@ public class BillsController {
    private String welcomeMessage;
 
     @GetMapping(value = "/")
-    public List<Bill> index() throws SQLException {
+    public List index() throws SQLException, IOException {
         System.out.println("testing sout");
-        List<Bill> str = new ArrayList<>();
+//        List<Bill> str = new ArrayList<>();
 //        //billService.selectEveryBill();
 //        for (Bill bill :
 //                str) {
 //            bill.setBillAccountNumber(bill.getBillAccountNumber() + " - Stuff-n-Stuff-some-more-stuff");
 //        }
+        InputStream input = new FileInputStream("src/main/resources/application.properties");
+        Properties prop = new Properties();
+        prop.load(input);
         Connection con = DriverManager.getConnection
-                ("jdbc:mysql://localhost:3306/test_database?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "amalyuchik", "Malinois49!");
+                (prop.getProperty("spring.datasource.url"), prop.getProperty("spring.datasource.username"), prop.getProperty("spring.datasource.password"));
 
         Statement stmt = con.createStatement();
 
@@ -53,14 +59,15 @@ public class BillsController {
 
         List rs2 = this.resultSetToArrayList(rs);
 
-        return str;
+//        return str;
+        return rs2;
            }
 
 
     public List resultSetToArrayList(ResultSet rs) throws SQLException {
         ResultSetMetaData md = rs.getMetaData();
         int columns = md.getColumnCount();
-        ArrayList list = new ArrayList(50);
+        ArrayList list = new ArrayList();
         while (rs.next()){
             HashMap row = new HashMap(columns);
             for(int i=1; i<=columns; ++i){
